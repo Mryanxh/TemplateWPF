@@ -1,0 +1,88 @@
+﻿<Window x:Class="TemplateWPF.Windows.SettingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TemplateWPF.Windows"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="设置" Height="350" Width="400" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style TargetType="TabControl">
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        
+        <Style TargetType="Grid">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Vertical"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" TabStripPlacement="Left" Name="tab_Con">
+            <TabItem Header="基本设置">
+                <Grid Grid.Row="0" Height="Auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <CheckBox Content="开机启动" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Path=AutoStart}"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="数据库">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Height="Auto">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="IP地址" Grid.Row="0" Grid.Column="0"/>
+                        <TextBox Text="{Binding Path=MysqlIPaddress}" Grid.Row="0" Grid.Column="1"/>
+                        
+                        <TextBlock Text="端口号" Grid.Row="1" Grid.Column="0"/>
+                        <TextBox Text="{Binding Path=Mysqlport}" Grid.Row="1" Grid.Column="1"/>
+                        
+                        <TextBlock Text="用户名" Grid.Row="2" Grid.Column="0"/>
+                        <TextBox Text="{Binding Path=Mysqlusername}" Grid.Row="2" Grid.Column="1"/>
+
+                        <TextBlock Text="密码" Grid.Row="3" Grid.Column="0"/>
+                        <PasswordBox PasswordChar="*" Grid.Row="3" Grid.Column="4" Name="mysqltxt_Psw"/>
+
+                        <TextBlock Text="数据库名称" Grid.Row="4" Grid.Column="0"/>
+                        <TextBox Text="{Binding Path=MysqlDBname}" Grid.Row="4" Grid.Column="1"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Button Content="测试连接" Command="{Binding Path=CheckMysqlDBConnectCommand}" CommandParameter="{Binding ElementName=mysqltxt_Psw}" HorizontalAlignment="Right" Width="100" Margin="5"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Grid Grid.Row="1">
+            <Button Content="保存" HorizontalAlignment="Right" Width="100" Command="{Binding Path=SaveSettingCommand}" CommandParameter="{Binding ElementName=mysqltxt_Psw}" Margin="5"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -100,9 +100,8 @@
     <Compile Include="StaticCache.cs" />
     <Compile Include="Utils\AppStatus.cs" />
     <Compile Include="Utils\AutoStart.cs" />
-    <Compile Include="Utils\AutoUpLoad.cs" />
-    <Compile Include="Utils\BaseClass\HandeBindingBase.cs" />
-    <Compile Include="Utils\BaseClass\HandeDelegateCommand.cs" />
+    <Compile Include="Utils\BaseClass\MyBindingBase.cs" />
+    <Compile Include="Utils\BaseClass\MyDelegateCommand.cs" />
     <Compile Include="Utils\HttpWebUtil.cs" />
     <Compile Include="ViewModel\MainWindowViewMode.cs" />
     <Compile Include="ViewModel\SettingWindowViewModel.cs" />

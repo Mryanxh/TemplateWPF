@@ -23,7 +23,7 @@ using System.Threading.Tasks;
 
 namespace TemplateWPF.Utils
 {
-    public class HttpWebUtil
+    public class HttpUtil
     {
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         /// <summary>

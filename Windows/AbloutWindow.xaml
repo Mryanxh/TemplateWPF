@@ -8,7 +8,7 @@
         Title="关于" Height="160" Width="300">
     <Grid>
         <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
-            <TextBlock Text=""/>
+            <TextBlock Text="1234567"/>
         </WrapPanel>
     </Grid>
 </Window>

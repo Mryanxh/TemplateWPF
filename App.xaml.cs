@@ -63,7 +63,7 @@ namespace TemplateWPF
             {
                 Visible = true,
                 Text = string.Format("{0}", AppStatus.AppName),
-                Icon = TemplateWPF.Properties.Resources.Logo
+                Icon = TemplateWPF.Properties.Resources.logo
             };
             #region 添加右键菜单内容
             MenuItem ExitItem = new MenuItem();

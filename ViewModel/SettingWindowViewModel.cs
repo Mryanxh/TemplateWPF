@@ -21,7 +21,7 @@ using TemplateWPF.Utils.BaseClass;
 
 namespace TemplateWPF.ViewModel
 {
-    public class SettingWindowViewModel: HandeBindingBase
+    public class SettingWindowViewModel: MyBindingBase
     {
         public string MysqlIPaddress
         {
@@ -63,13 +63,13 @@ namespace TemplateWPF.ViewModel
             }
         }
 
-        public HandeDelegateCommand CheckMysqlDBConnectCommand { get; set; }
+        public MyDelegateCommand CheckMysqlDBConnectCommand { get; set; }
 
-        public HandeDelegateCommand SaveSettingCommand { get; set; }
+        public MyDelegateCommand SaveSettingCommand { get; set; }
         public SettingWindowViewModel()
         {
-            CheckMysqlDBConnectCommand = new HandeDelegateCommand(CheckMysqlDBConnectCommandExe);
-            SaveSettingCommand = new HandeDelegateCommand(SaveSettingCommandExe);
+            CheckMysqlDBConnectCommand = new MyDelegateCommand(CheckMysqlDBConnectCommandExe);
+            SaveSettingCommand = new MyDelegateCommand(SaveSettingCommandExe);
         }
 
         private void CheckMysqlDBConnectCommandExe(object paramter)

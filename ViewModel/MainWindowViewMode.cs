@@ -21,7 +21,7 @@ using System.Threading.Tasks;
 
 namespace TemplateWPF.ViewModel
 {
-    public class MainWindowViewMode: HandeBindingBase
+    public class MainWindowViewMode: MyBindingBase
     {
         private readonly MainWindowModel _Model;
         public string MainTitle
@@ -34,17 +34,17 @@ namespace TemplateWPF.ViewModel
             }
         }
 
-        public HandeDelegateCommand CheckUpDataCommand { get; set; }
-        public HandeDelegateCommand ViewSettingCommand { get; set; }
-        public HandeDelegateCommand AbloutHelpCommand { get; set; }
+        public MyDelegateCommand CheckUpDataCommand { get; set; }
+        public MyDelegateCommand ViewSettingCommand { get; set; }
+        public MyDelegateCommand AbloutHelpCommand { get; set; }
 
 
         public MainWindowViewMode()
         {
             _Model = new MainWindowModel();
-            ViewSettingCommand = new HandeDelegateCommand(ViewSettingCommandExe);
-            CheckUpDataCommand = new HandeDelegateCommand(CheckUpDataCommandExe);
-            AbloutHelpCommand = new HandeDelegateCommand(AbloutHelpCommandExe);
+            ViewSettingCommand = new MyDelegateCommand(ViewSettingCommandExe);
+            CheckUpDataCommand = new MyDelegateCommand(CheckUpDataCommandExe);
+            AbloutHelpCommand = new MyDelegateCommand(AbloutHelpCommandExe);
         }
 
         private void ViewSettingCommandExe(object paramter)

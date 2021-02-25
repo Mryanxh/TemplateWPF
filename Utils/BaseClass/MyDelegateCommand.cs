@@ -1,5 +1,5 @@
 ﻿/* ===============================================
-* 功能描述：HandeDelegateCommand  
+* 功能描述：MyDelegateCommand  
 * 创 建 人：燕晓贺
 * 创建日期：2021/2/2 15:15:53
 * CLR版本：4.0.30319.42000
@@ -19,7 +19,7 @@ using System.Windows.Input;
 
 namespace TemplateWPF.Utils.BaseClass
 {
-    public class HandeDelegateCommand : ICommand
+    public class MyDelegateCommand : ICommand
     {
         public bool CanExecute(object parameter)
         {
@@ -45,7 +45,7 @@ namespace TemplateWPF.Utils.BaseClass
         private Action<object> ExecuteAction { get; set; }
         public Func<object, bool> CanExecuteFunc { get; set; }
 
-        public HandeDelegateCommand(Action<object> executeAction)
+        public MyDelegateCommand(Action<object> executeAction)
         {
             ExecuteAction = executeAction;
         }

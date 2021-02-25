@@ -8,7 +8,7 @@
         Title="关于" Height="160" Width="300">
     <Grid>
         <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
-            <TextBlock Text="本程序由上海先德医疗技术有限公司发行"/>
+            <TextBlock Text=""/>
         </WrapPanel>
     </Grid>
 </Window>

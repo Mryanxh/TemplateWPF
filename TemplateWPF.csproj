@@ -148,10 +148,6 @@
     <Folder Include="PublicUserControls\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Generic.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

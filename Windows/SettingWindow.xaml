@@ -17,6 +17,17 @@
         <Style TargetType="StackPanel">
             <Setter Property="Orientation" Value="Vertical"/>
         </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="0,5,0,5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="0,5,0,5"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="Margin" Value="0,5,0,5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -27,18 +38,13 @@
             <TabItem Header="基本设置">
                 <Grid Grid.Row="0" Height="Auto">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <CheckBox Content="开机启动" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Path=AutoStart}"/>
+                    <StackPanel Orientation="Vertical">
+                        <CheckBox Content="自动更新" IsChecked="{Binding Path=AutoUpdate}"/>
+                        <CheckBox Content="开机启动" IsChecked="{Binding Path=AutoStart}"/>
+                    </StackPanel>
                 </Grid>
             </TabItem>
             <TabItem Header="数据库">
@@ -70,7 +76,7 @@
                         <TextBox Text="{Binding Path=Mysqlusername}" Grid.Row="2" Grid.Column="1"/>
 
                         <TextBlock Text="密码" Grid.Row="3" Grid.Column="0"/>
-                        <PasswordBox PasswordChar="*" Grid.Row="3" Grid.Column="4" Name="mysqltxt_Psw"/>
+                        <PasswordBox PasswordChar="*" Grid.Row="3" Grid.Column="4" Name="mysqltxt_Psw" Margin="0,5,0,5" VerticalAlignment="Center"/>
 
                         <TextBlock Text="数据库名称" Grid.Row="4" Grid.Column="0"/>
                         <TextBox Text="{Binding Path=MysqlDBname}" Grid.Row="4" Grid.Column="1"/>
@@ -82,7 +88,7 @@
             </TabItem>
         </TabControl>
         <Grid Grid.Row="1">
-            <Button Content="保存" HorizontalAlignment="Right" Width="100" Command="{Binding Path=SaveSettingCommand}" CommandParameter="{Binding ElementName=mysqltxt_Psw}" Margin="5"/>
+            <Button Content="保存" HorizontalAlignment="Right" Visibility="Collapsed" Width="100" Command="{Binding Path=SaveSettingCommand}" CommandParameter="{Binding ElementName=mysqltxt_Psw}" Margin="5"/>
         </Grid>
     </Grid>
 </Window>

@@ -20,6 +20,7 @@ namespace TemplateWPF.Utils.BaseClass
         public void OnPropertyChanged(string value)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(value));
+            Properties.Settings.Default.Save();
         }
     }
 }

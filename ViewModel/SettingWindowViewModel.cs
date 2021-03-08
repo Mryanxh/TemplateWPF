@@ -23,6 +23,26 @@ namespace TemplateWPF.ViewModel
 {
     public class SettingWindowViewModel: MyBindingBase
     {
+
+        public bool AutoStart
+        {
+            get { return Properties.Settings.Default.AutoStart; }
+            set
+            {
+                Properties.Settings.Default.AutoStart = value;
+                Utils.AutoStart.SetMeStart(Properties.Settings.Default.AutoStart);
+                OnPropertyChanged("AutoStart");
+            }
+        }
+        public bool AutoUpdate
+        {
+            get { return Properties.Settings.Default.AutoUpdate; }
+            set
+            {
+                Properties.Settings.Default.AutoUpdate = value;
+                OnPropertyChanged("AutoUpdate");
+            }
+        }
         public string MysqlIPaddress
         {
             get { return Properties.Settings.Default.MySqlIpAddress; }

@@ -144,9 +144,7 @@
     </Content>
     <None Include="Resources\logo.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PublicUserControls\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>

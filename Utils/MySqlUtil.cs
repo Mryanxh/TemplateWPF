@@ -64,21 +64,13 @@ namespace TemplateWPF.Utils
 
         public bool CheckDBConnect()
         {
-            try
-            {
-                MySqlConnection con = new MySqlConnection(GetConStr().ToString());
-                con.Open();
-                Logger.Info("数据库连接成功!");
-                con.Close();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Logger.ErrorFormat("数据库连接失败:{0}", ex.Message);
-                return false;
-            }
+            MySqlConnection con = new MySqlConnection(GetConStr().ToString());
+            con.Open();
+            Logger.Info("数据库连接成功!");
+            con.Close();
+            return true;
         }
-        public bool CheckDBConnect(string ip,uint port,string username,string password,string dbname)
+        public bool CheckDBConnect(string ip, uint port, string username, string password, string dbname)
         {
             string constr = new MySqlConnectionStringBuilder
             {
@@ -87,21 +79,14 @@ namespace TemplateWPF.Utils
                 UserID = username,
                 Password = password,
                 Database = dbname,
-                CharacterSet = Encoding.UTF8.WebName
+                CharacterSet = Encoding.UTF8.WebName.Replace("-","")
             }.ToString();
-            try
-            {
-                MySqlConnection con = new MySqlConnection(constr);
-                con.Open();
-                Logger.Info("数据库连接成功!");
-                con.Close();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Logger.ErrorFormat("数据库连接失败:{0}", ex.Message);
-                return false;
-            }
+
+            MySqlConnection con = new MySqlConnection(constr);
+            con.Open();
+            Logger.Info("数据库连接成功!");
+            con.Close();
+            return true;
         }
 
         private MySqlConnectionStringBuilder GetConStr()

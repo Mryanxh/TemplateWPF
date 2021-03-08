@@ -5,11 +5,6 @@
              Startup="ApplicationStart" 
              Exit="ApplicationExit" StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <!--合并资源字典到Application.Resources中-->
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Generic.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        
     </Application.Resources>
 </Application>

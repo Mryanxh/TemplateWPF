@@ -102,7 +102,8 @@
     <Compile Include="Utils\AutoStart.cs" />
     <Compile Include="Utils\BaseClass\MyBindingBase.cs" />
     <Compile Include="Utils\BaseClass\MyDelegateCommand.cs" />
-    <Compile Include="Utils\HttpWebUtil.cs" />
+    <Compile Include="Utils\HttpUtil.cs" />
+    <Compile Include="Utils\MySqlUtil.cs" />
     <Compile Include="ViewModel\MainWindowViewMode.cs" />
     <Compile Include="ViewModel\SettingWindowViewModel.cs" />
     <Compile Include="Windows\AbloutWindow.xaml.cs">
@@ -113,7 +114,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Utils\MySqlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
